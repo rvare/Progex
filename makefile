@@ -1,5 +1,5 @@
 OBJFILES=./build/main.o ./build/check_mkdir_error.o ./build/create_c_project.o
-CFLAGS=-c -Wall
+CFLAGS=-c -Wall -Wswitch-default -Wconversion
 
 default: $(OBJFILES)
 	gcc -Wall $(OBJFILES) -o ./build/a.exe
@@ -13,8 +13,8 @@ default: $(OBJFILES)
 ./build/create_c_project.o: ./src/create_c_project.c
 	gcc $(CFLAGS) ./src/create_c_project.c -o ./build/create_c_project.o
 
-run:
-	./build/a.exe c my_pro
+test-c: ./build/a.exe
+	./build/a.exe c ./tests/my_pro
 
 clean:
 	./build/*.o ./build/a.exe
