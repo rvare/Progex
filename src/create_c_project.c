@@ -48,7 +48,7 @@ void create_c_project(char* project_name) {
 		strcat(file_path, file_names[i]);
 		FILE *file_ptr = fopen(file_path, "w");
 		if (file_ptr == NULL) {
-			char err_msg[SIZE];
+			char err_msg[SIZE+100];
 			sprintf(err_msg, "Could not create file: %s", file_path);
 			perror(err_msg);
 		}
