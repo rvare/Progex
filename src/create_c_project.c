@@ -63,27 +63,29 @@ void create_c_project(char* project_name) {
 }
 
 void _create_makefile(FILE* file_ptr) {
-	fprintf(file_ptr, "default: build/main.o\n");
-	fprintf(file_ptr, "\tgcc main.o\n\n");
-	fprintf(file_ptr, "build/main.o: src/main.c\n");
-	fprintf(file_ptr, "\tgcc -c src/main.c build/main.c\n\n");
+	fprintf(file_ptr,	"OBJFILES=./build/main.o\n"
+						"CFLAGS=-c -Wall\n\n"
+						"default: $(OBJFILES)\n"
+						"\tgcc $(OBJFILES) -o ./build/a.exe\n\n"
+						"build/main.o: src/main.c\n"
+						"\tgcc $(CFLAGS) src/main.c -o build/main.o\n\n");
 }
 
 void _create_readme(FILE* file_ptr) {
-	fprintf(file_ptr, "# README\n\n");
-	fprintf(file_ptr, "Information about this program.");
+	fprintf(file_ptr,	"# README\n\n"
+						"Information about this program.");
 }
 
 void _create_gitignore(FILE* file_ptr) {
-	fprintf(file_ptr, "*.swp\n");
-	fprintf(file_ptr, "*~");
+	fprintf(file_ptr,	"*.swp\n"
+						"*~");
 }
 
 void _create_main(FILE* file_ptr) {
-	fprintf(file_ptr, "#include <stdio.h>\n");
-	fprintf(file_ptr, "#include <stdlib.h>\n\n");
-	fprintf(file_ptr, "int main() {\n");
-	fprintf(file_ptr, "\tprintf(\"Hello, world!\\n\");\n\n");
-	fprintf(file_ptr, "\treturn 0;\n}");
+	fprintf(file_ptr,	"#include <stdio.h>\n"
+						"#include <stdlib.h>\n\n"
+						"int main() {\n"
+						"\tprintf(\"Hello, world!\\n\");\n\n"
+						"\treturn 0;\n}");
 }
 
