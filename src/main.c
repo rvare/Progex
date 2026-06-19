@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
+
+#include "../include/proinitutil.h"
 
 int main(int argc, char* argv[]) {
 	if (argc <= 1) {
@@ -17,6 +20,8 @@ int main(int argc, char* argv[]) {
 	}
 	else if (strcmp(argv[1], "c") == 0) {
 		printf("Create C project\n");
+		printf("%s\n", argv[2]);
+		create_c_project(argv[2]);
 	}
 	else {
 		fprintf(stderr, "Display error information\n");
