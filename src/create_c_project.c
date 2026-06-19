@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
-#include <assert.h>
+#include <errno.h>
+
+#include "../include/proinitutil.h"
 
 #define SIZE 200
 #define DIR_NAME_ARR_SIZE 5
@@ -23,11 +25,12 @@ void create_c_project(char* project_name) {
 
 	strcat(file_path, project_name);
 	strcat(file_path, "/");
-	size_t len = strlen(file_path);
+	size_t proname_len = strlen(file_path);
 
 	success = mkdir(file_path);
 	if (success != 0) {
 		printf("Unable to create project directory.\n");
+		check_mkdir_error(file_path);
 		exit(EXIT_FAILURE);
 	}
 
@@ -37,10 +40,12 @@ void create_c_project(char* project_name) {
 		success = mkdir(file_path);
 		if (success == 0)
 			printf("Subdirectory created: %s\n", file_path);
-		else
+		else {
 			printf("ERROR: Unable to create subdirectory: %s\n", file_path);
-		memset(file_path+len, ' ', SIZE-len);
-		file_path[len] = '\0';
+			check_mkdir_error(file_path);
+		}
+		memset(file_path+proname_len, ' ', SIZE-proname_len);
+		file_path[proname_len] = '\0';
 	}
 
 	// Create files
@@ -57,8 +62,8 @@ void create_c_project(char* project_name) {
 			fclose(file_ptr);
 			printf("Created file: %s\n", file_path);
 		}
-		memset(file_path+len, ' ', SIZE-len);
-		file_path[len] = '\0';
+		memset(file_path+proname_len, ' ', SIZE-proname_len);
+		file_path[proname_len] = '\0';
 	}
 }
 
