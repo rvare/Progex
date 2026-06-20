@@ -8,17 +8,18 @@
 
 #define SIZE 200
 #define DIR_NAME_ARR_SIZE 3
-#define FILE_FUNC_ARR_SIZE 4
+#define FILE_FUNC_ARR_SIZE 5
 
 static void _create_makefile(FILE*);
 static void _create_readme(FILE*);
 static void _create_gitignore(FILE*);
 static void _create_main(FILE*);
+static void _create_manifest(FILE*);
 
 void create_java_project(char* project_name) {
 	const char* directory_names[] = {"src/", "docs/", "classes/"};
 	const char* file_names[] = {"src/Main.java", "makefile", "README.md", ".gitignore", "manifest.txt"};
-	const void (*func_ptr[])(FILE*) = { &_create_main, &_create_makefile, &_create_readme, &_create_gitignore };
+	const void (*func_ptr[])(FILE*) = { &_create_main, &_create_makefile, &_create_readme, &_create_gitignore, &_create_manifest };
 	char file_path[SIZE] = "./";
 	int success;
 
@@ -74,7 +75,9 @@ static void _create_makefile(FILE* file_ptr) {
 						"$(CLASSPATH)Main.class: $(SRCPATH)Main.java\n"
 						"\tjavac $(SRCPATH)Main.java -d ./$(CLASSPATH)\n\n"
 						"run: $(CLASSPATH)Main.class\n"
-						"\tjava -cp $(CLASSPATH) Main");
+						"\tjava -cp $(CLASSPATH) Main\n\n"
+						"jar:\n"
+						"\tjar -cvmf manifest.txt Main.jar -C classes .");
 
 }
 
@@ -96,4 +99,8 @@ static void _create_main(FILE* file_ptr) {
 						"\tpublic static void main(String[] args) {\n"
 						"\t\tSystem.out.println(\"Hello, world!\");\n\t}\n}"
 	);
+}
+
+static void _create_manifest(FILE*file_ptr) {
+	fprintf(file_ptr,	"Main-Class: Main");
 }
