@@ -67,7 +67,15 @@ void create_java_project(char* project_name) {
 }
 
 static void _create_makefile(FILE* file_ptr) {
-	fprintf(file_ptr,	"default:\n");
+	fprintf(file_ptr,	"CLASSPATH=classes/\n"
+						"SRCPATH=./src/\n\n"
+						"default: $(SRCPATH)Main.java\n"
+						"\tjavac $(SRCPATH)Main.java -d ./$(CLASSPATH)\n\n"
+						"$(CLASSPATH)Main.class: $(SRCPATH)Main.java\n"
+						"\tjavac $(SRCPATH)Main.java -d ./$(CLASSPATH)\n\n"
+						"run: $(CLASSPATH)Main.class\n"
+						"\tjava -cp $(CLASSPATH) Main");
+
 }
 
 static void _create_readme(FILE* file_ptr) {
