@@ -102,5 +102,6 @@ static void _create_main(FILE* file_ptr) {
 }
 
 static void _create_manifest(FILE*file_ptr) {
-	fprintf(file_ptr,	"Main-Class: Main");
+	fprintf(file_ptr,	"Manifest-Version: 1.0\n"
+						"Main-Class: Main\n");
 }
