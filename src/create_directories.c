@@ -7,12 +7,11 @@
 
 #define SIZE 200
 
-void create_directories(char* file_path, const char* directory_names[], const int size) {
+void create_directories(char* file_path, const char* directory_names[], const size_t size) {
 	size_t proname_len = strlen(file_path);
-	for (int i = 0; i < size; ++i) {
+	for (size_t i = 0; i < size; ++i) {
 		strcat(file_path, directory_names[i]);
-		int success = mkdir(file_path);
-		if (success == 0)
+		if (0 == mkdir(file_path))
 			printf("Subdirectory created: %s\n", file_path);
 		else {
 			printf("ERROR: Unable to create subdirectory: %s\n", file_path);
