@@ -28,6 +28,11 @@ int main(int argc, char* argv[]) {
 		printf("%s\n", argv[2]);
 		create_java_project(argv[2]);
 	}
+	else if (strcmp(argv[1], "python") == 0) {
+		printf("Create Python project\n");
+		printf("%s\n", argv[2]);
+		create_python_project(argv[2]);
+	}
 	else {
 		fprintf(stderr, "Display error information\n");
 		return 1;
