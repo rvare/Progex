@@ -2,11 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
-#include <errno.h>
 
 #include "../include/proinitutil.h"
 
-#define SIZE 200
 #define DIR_NAME_ARR_SIZE 3
 #define FILE_FUNC_ARR_SIZE 5
 
@@ -20,7 +18,7 @@ void create_java_project(char* project_name) {
 	const char* directory_names[] = {"src/", "docs/", "classes/"};
 	const char* file_names[] = {"src/Main.java", "makefile", "README.md", ".gitignore", "manifest.txt"};
 	const void (*func_ptr[])(FILE*) = { &_create_main, &_create_makefile, &_create_readme, &_create_gitignore, &_create_manifest };
-	char file_path[SIZE];
+	char file_path[DIR_PATH_SIZE];
 
 	strcpy(file_path, project_name);
 	strcat(file_path, "/");

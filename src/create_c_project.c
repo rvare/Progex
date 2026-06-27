@@ -2,11 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
-#include <errno.h>
 
 #include "../include/proinitutil.h"
 
-#define SIZE 200
 #define DIR_NAME_ARR_SIZE 5
 #define FILE_FUNC_ARR_SIZE 4
 
@@ -20,7 +18,7 @@ void create_c_project(char* project_name) {
 	const char* directory_names[] = {"src/", "include/", "tests/", "build/", "docs/"};
 	const char* file_names[] = {"makefile", "README.md", ".gitignore", "src/main.c"};
 	const void (*func_ptr[])(FILE*) = { &_create_makefile, &_create_readme, &_create_gitignore, &_create_main };
-	char file_path[SIZE];
+	char file_path[DIR_PATH_SIZE];
 
 	strcpy(file_path, project_name);
 	strcat(file_path, "/");
