@@ -1,5 +1,5 @@
 OBJFILES=./build/main.o ./build/check_mkdir_error.o ./build/create_c_project.o \
-			./build/create_java_project.o ./build/create_directories.o ./build/create_files.o \
+			./build/create_java_project.o ./build/generate_directories.o ./build/generate_files.o \
 			./build/create_python_project.o
 CFLAGS=-c -Wall -Wswitch-default -Wconversion
 
@@ -9,11 +9,11 @@ default: $(OBJFILES)
 ./build/main.o: ./src/main.c
 	gcc $(CFLAGS) ./src/main.c -o ./build/main.o
 
-./build/create_directories.o: ./src/create_directories.c
-	gcc $(CFLAGS) ./src/create_directories.c -o ./build/create_directories.o
+./build/generate_directories.o: ./src/generate_directories.c
+	gcc $(CFLAGS) ./src/generate_directories.c -o ./build/generate_directories.o
 
-./build/create_files.o: ./src/create_files.c
-	gcc $(CFLAGS) ./src/create_files.c -o ./build/create_files.o
+./build/generate_files.o: ./src/generate_files.c
+	gcc $(CFLAGS) ./src/generate_files.c -o ./build/generate_files.o
 
 ./build/check_mkdir_error.o: ./src/check_mkdir_error.c
 	gcc $(CFLAGS) ./src/check_mkdir_error.c -o ./build/check_mkdir_error.o
