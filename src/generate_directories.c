@@ -7,7 +7,7 @@
 
 #define SIZE 200
 
-void create_directories(char* file_path, const char* directory_names[], const size_t size) {
+void generate_directories(char* file_path, const char* directory_names[], const size_t size) {
 	size_t proname_len = strlen(file_path);
 	for (size_t i = 0; i < size; ++i) {
 		strcat(file_path, directory_names[i]);

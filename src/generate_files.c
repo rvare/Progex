@@ -7,7 +7,7 @@
 
 #define SIZE 200
 
-void create_files(char* file_path, const char* file_names[], const void (*func_ptr[])(FILE*), const size_t size) {
+void generate_files(char* file_path, const char* file_names[], const void (*func_ptr[])(FILE*), const size_t size) {
 	size_t proname_len = strlen(file_path);
 	for (size_t i = 0; i < size; ++i) {
 		strcat(file_path, file_names[i]);

@@ -31,9 +31,9 @@ void create_c_project(char* project_name) {
 		exit(EXIT_FAILURE);
 	}
 
-	create_directories(file_path, directory_names, DIR_NAME_ARR_SIZE);
+	generate_directories(file_path, directory_names, DIR_NAME_ARR_SIZE);
 
-	create_files(file_path, file_names, func_ptr, FILE_FUNC_ARR_SIZE);
+	generate_files(file_path, file_names, func_ptr, FILE_FUNC_ARR_SIZE);
 }
 
 void _create_makefile(FILE* file_ptr) {
