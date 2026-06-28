@@ -5,6 +5,7 @@
 
 #include "../include/proinitutil.h"
 
+// These constants are unique for this file only.
 #define DIR_NAME_ARR_SIZE 3
 #define FILE_FUNC_ARR_SIZE 4
 

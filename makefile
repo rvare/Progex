@@ -31,10 +31,10 @@ test-c: ./build/a.exe
 	./build/a.exe c ./tests/my_pro
 
 test-java: ./build/a.exe
-	./build/a.exe java my_java_pro
+	./build/a.exe java ./tests/my_java_pro
 
 test-python: ./build/a.exe
-	./build/a.exe python my_python_pro
+	./build/a.exe python ./tests/my_python_pro
 
 debug: $(OBJFILES)
 	gcc -g ./src/*.c -o ./build/a.exe

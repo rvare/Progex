@@ -5,9 +5,11 @@
 
 #include "../include/proinitutil.h"
 
+// These constants are unique for this file only.
 #define DIR_NAME_ARR_SIZE 3
 #define FILE_FUNC_ARR_SIZE 5
 
+// These functions should stay private in this file.
 static void _create_makefile(FILE*);
 static void _create_readme(FILE*);
 static void _create_gitignore(FILE*);

@@ -4,6 +4,7 @@
 
 #include "../include/proinitutil.h"
 
+/* Responsible for generating direcotries and handling errors associated with them. */
 void generate_directories(char* file_path, const char* directory_names[], const size_t size) {
 	size_t proname_len = strlen(file_path);
 	for (size_t i = 0; i < size; ++i) {
