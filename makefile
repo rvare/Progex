@@ -1,6 +1,6 @@
 OBJFILES=./build/main.o ./build/check_mkdir_error.o ./build/create_c_project.o \
 			./build/create_java_project.o ./build/generate_directories.o ./build/generate_files.o \
-			./build/create_python_project.o
+			./build/create_python_project.o ./build/help_info.o ./build/version_info.o
 CFLAGS=-c -Wall -Wswitch-default -Wconversion
 
 default: $(OBJFILES)
@@ -8,6 +8,12 @@ default: $(OBJFILES)
 
 ./build/main.o: ./src/main.c
 	gcc $(CFLAGS) ./src/main.c -o ./build/main.o
+
+./build/help_info.o: ./src/help_info.c
+	gcc $(CFLAGS) ./src/help_info.c -o ./build/help_info.o
+
+./build/version_info.o: ./src/version_info.c
+	gcc $(CFLAGS) ./src/version_info.c -o ./build/version_info.o
 
 ./build/generate_directories.o: ./src/generate_directories.c
 	gcc $(CFLAGS) ./src/generate_directories.c -o ./build/generate_directories.o

@@ -1,21 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "../include/proinitutil.h"
 
 int main(int argc, char* argv[]) {
 	if (argc <= 1) {
-		fprintf(stderr, "Not enough args\n");
+		fprintf(stderr,	"No arguments given!\n"
+						"Provide a language and project name to get started.");
 		printf("%s\n", argv[0]);
 		return 1;
 	}
 
+	// Convert the first argument to lower case.
+	for (size_t i = 0; argv[1][i]; ++i) {
+		argv[1][i] = (char)tolower((int)argv[1][i]);
+	}
+
 	if (strcmp(argv[1], "--help") == 0) {
-		printf("Display help info\n");
+		help_info();
 	}
 	else if (strcmp(argv[1], "--version") == 0) {
-		printf("Display version info\n");
+		version_info();
 	}
 	else if (strcmp(argv[1], "c") == 0) {
 		printf("Create C project\n");
@@ -33,7 +40,8 @@ int main(int argc, char* argv[]) {
 		create_python_project(argv[2]);
 	}
 	else {
-		fprintf(stderr, "Display error information\n");
+		fprintf(stderr, "The language given is either not supported, is spelled wrong, or does not exits.\n");
+		fprintf(stderr, "The following are supported langauges: C, Java, Python.");
 		return 1;
 	}
 

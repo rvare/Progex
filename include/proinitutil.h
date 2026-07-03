@@ -3,6 +3,8 @@
 void create_c_project(char* project_name);
 void create_java_project(char* project_name);
 void create_python_project(char* project_name);
+void help_info();
+void version_info();
 
 // Helper functions
 void generate_directories(char* file_path, const char* directory_names[], const size_t size);
