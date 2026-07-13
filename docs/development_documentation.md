@@ -1,3 +1,9 @@
+<!--
+Copyright (c) 2026 Richard Varela
+This file is part of Progex which is release under 3-Clause BSD.
+See LICENSE for details.
+-->
+
 **Table of Contents**
 
 - [Introduction](#introduction)

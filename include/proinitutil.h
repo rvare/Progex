@@ -1,3 +1,9 @@
+/*
+Copyright (c) 2026 Richard Varela.
+This file is part of Progex which is release under 3-Clause BSD.
+See LICENSE for details.
+*/
+
 #define DIR_PATH_SIZE	100 // Used for strings that represent directory paths.
 
 void create_c_project(char* project_name);

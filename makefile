@@ -1,3 +1,7 @@
+# Copyright (c) 2026 Richard Varela
+# This file is part of Progex which is release under 3-Clause BSD.
+# See LICENSE for details.
+
 OBJFILES=./build/main.o ./build/check_mkdir_error.o ./build/create_c_project.o \
 			./build/create_java_project.o ./build/generate_directories.o ./build/generate_files.o \
 			./build/create_python_project.o ./build/help_info.o ./build/version_info.o
