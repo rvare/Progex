@@ -8,7 +8,7 @@ See LICENSE for details.
 #include <sys/stat.h>
 #include <stdio.h>
 
-#include "../include/proinitutil.h"
+#include "../include/progex.h"
 
 /* Responsible for generating files and handling errors associated with them. */
 void generate_files(char* file_path, const char* file_names[], const void (*func_ptr[])(FILE*), const size_t size) {

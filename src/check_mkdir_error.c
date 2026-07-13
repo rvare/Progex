@@ -7,7 +7,7 @@ See LICENSE for details.
 #include <stdio.h>
 #include <errno.h>
 
-#include "../include/proinitutil.h"
+#include "../include/progex.h"
 
 /* Used to check the value of errno when creating directories, and print a relevant error message. */
 void check_mkdir_error(char* dir_path) {

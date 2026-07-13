@@ -9,7 +9,7 @@ See LICENSE for details.
 #include <string.h>
 #include <sys/stat.h>
 
-#include "../include/proinitutil.h"
+#include "../include/progex.h"
 
 // These constants are unique for this file only.
 #define DIR_NAME_ARR_SIZE 5

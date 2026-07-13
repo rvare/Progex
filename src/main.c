@@ -9,7 +9,7 @@ See LICENSE for details.
 #include <string.h>
 #include <ctype.h>
 
-#include "../include/proinitutil.h"
+#include "../include/progex.h"
 
 int main(int argc, char* argv[]) {
 	if (argc <= 1) {

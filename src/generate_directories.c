@@ -8,7 +8,7 @@ See LICENSE for details.
 #include <sys/stat.h>
 #include <stdio.h>
 
-#include "../include/proinitutil.h"
+#include "../include/progex.h"
 
 /* Responsible for generating direcotries and handling errors associated with them. */
 void generate_directories(char* file_path, const char* directory_names[], const size_t size) {
