@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 	}
 	else {
 		fprintf(stderr, "The language given is either not supported, is spelled wrong, or does not exits.\n");
-		fprintf(stderr, "The following are supported langauges: C, Java, Python.");
+		fprintf(stderr, "The following are supported languages: C, Java, Python.");
 		return 1;
 	}
 

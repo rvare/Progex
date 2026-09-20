@@ -16,7 +16,7 @@ See LICENSE for details.
 
 ## Building a Simple Project
 
-To create a new project, simple provide the programming language *first*, and the name of your new project *second*.
+To create a new project, simply provide the programming language *first*, and the name of your new project *second*.
 
 ```bash
 progex <language> <project name>
@@ -41,9 +41,13 @@ progex --help
 # Build Instructions
 
 This application requires no dependencies.
-You should be able to build it with any C compiler, and have a Make utility (like GNU Make for example).
+You should be able to build it with any C compiler.
+It is recommended to use your system's a Make utility (like GNU Make for example) to build the executable.
 
-To build, simple run `make` and it will build the entire application.
+To build, simply run `make` and it will build the entire application.
 This will produce an executable called `progex` in the `build/` directory.
 
 *Note:* On Windows, specifically using MSYS2, it will be `progex.exe` instead.
+
+To use this in your system, you will need to put the resulting binary somewhere that is convenient for you and set a path to it.
+

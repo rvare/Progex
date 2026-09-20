@@ -36,8 +36,13 @@ The following are the styling guidelines for the source files:
 - Nouns are used for variables and constants.
 - The source file name should match the function name, unless the source file name is for a collection of functions.
 - Instead of writing multiple `printf` statements for each unique line, utilize C's string concatenation.
+	- However, separate `printf` statements are suitable when one string has no formatting but another one does.
 - Use K&R style for brace placement.
-- Use comments when you can express clearly in code.
+- Use comments when you cannot express clearly in code.
+- Use Yoda notation in conditional statements.
+	- This helps prevent accidental assignments.
+	- Ex: `if (0 == my_var)`.
+- Tabs will be used instead of spaces for indentation.
 
 ## Source File Locations
 
@@ -112,7 +117,7 @@ mk_dir[Make directory]
 err_file@{ shape: diamond, label: "Erro making directory?" }
 mk_file[Make file]
 report_file_err[Report file could not be made]
-funcs[Call appropriate function for language type]
+funcs[Call appropriate function for chosen language]
 
 s --> proc
 proc --> action
@@ -139,7 +144,7 @@ create_files -- Yes --> e
 
 # Build Guide
 
-To build the Progex, simple run `make`.
+To build Progex, simply run `make`.
 This will run the following in the `makefile`:
 
 ```makefile
@@ -156,4 +161,5 @@ This will also start GDB.
 
 ## Cleaning Up
 
-To clean up object files and the compiled program for whatever reason, just simple run `make clean`.
+To clean up object files and the compiled program for whatever reason, run `make clean`.
+
