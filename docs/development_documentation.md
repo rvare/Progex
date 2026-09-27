@@ -51,6 +51,7 @@ The following show the directory structure.
 ```text
 progex/
 |--build/
+|  |--Object files and binary
 |--docs/
 |  |--development_documentation.md
 |  |--manual.md
@@ -60,6 +61,8 @@ progex/
 |  |--All source files
 |--tests/
 |--makefile
+|--README.md
+|--LICENSE
 ```
 
 # Design

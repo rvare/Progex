@@ -6,6 +6,7 @@ See LICENSE for details.
 
 #include <stdio.h>
 
+/* Invoked when the user uses --help. */
 void help_info() {
 	printf(	"Usage: progex [OPTION] [LANGUAGE] [PROJECT NAME]\n");
 	printf(	"Supported langauges:\n"

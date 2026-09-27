@@ -41,6 +41,7 @@ void create_c_project(char* project_name) {
 	generate_files(file_path, file_names, func_ptr, FILE_FUNC_ARR_SIZE);
 }
 
+/* Writes out the contents of the makefile. */
 void _create_makefile(FILE* file_ptr) {
 	fprintf(file_ptr,	"OBJFILES=./build/main.o\n"
 						"CFLAGS=-c -Wall\n\n"
@@ -50,16 +51,20 @@ void _create_makefile(FILE* file_ptr) {
 						"\tgcc $(CFLAGS) src/main.c -o build/main.o\n\n");
 }
 
+/* Creates a starter README.md file. */
 void _create_readme(FILE* file_ptr) {
 	fprintf(file_ptr,	"# README\n\n"
 						"Information about this program.");
 }
 
+/* Creates starter .gitignore file. */
 void _create_gitignore(FILE* file_ptr) {
-	fprintf(file_ptr,	"*.swp\n"
+	fprintf(file_ptr,	"*.o"
+						"*.swp\n"
 						"*~");
 }
 
+/* Creates a starter main.java file. */
 void _create_main(FILE* file_ptr) {
 	fprintf(file_ptr,	"#include <stdio.h>\n"
 						"#include <stdlib.h>\n\n"

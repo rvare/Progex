@@ -6,6 +6,7 @@ See LICENSE for details.
 
 #include <stdio.h>
 
+/* Invoked when user uses --version. */
 void version_info() {
 	printf(	"progex 1.0\n\n"
 			"Written by Richard Varela (rvare).\n");

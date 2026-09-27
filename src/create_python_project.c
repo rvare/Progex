@@ -41,23 +41,26 @@ void create_python_project(char* project_name) {
 	generate_files(file_path, file_names, func_ptr, FILE_FUNC_ARR_SIZE);
 }
 
-
+/* Writes out the contents of the makefile. */
 static void _create_makefile(FILE* file_ptr) {
 	fprintf(file_ptr,	"default: main.py\n"
 						"\tpython main.py\n");
 }
 
+/* Creates a starter README.md file. */
 static void _create_readme(FILE* file_ptr) {
 	fprintf(file_ptr,	"# README\n\n"
 						"Information about this program.");
 }
 
+/* Creates starter .gitignore file. */
 static void _create_gitignore(FILE* file_ptr) {
 	fprintf(file_ptr,	"*.swp\n"
 						"*~\n"
 						"__pycache__/\n");
 }
 
+/* Creates a starter main.py file. */
 static void _create_main(FILE* file_ptr) {
 	fprintf(file_ptr,	"if __name__ == '__main__':\n"
 						"    print('Hello, world!')\n");
