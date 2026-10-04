@@ -157,6 +157,22 @@ default: $(OBJFILES)
 
 where `$(OBJFILES)` represents all objects files made by the compiler.
 
+## Building A Single File
+
+For every source file, there should be a rule to compile it.
+These rules also include the same `CFLAGS` variable for compiling, which is defined below.
+
+```make
+CFLAGS=-c -Wall -Wswitch-default -Wconversion
+```
+
+Ex: What a rule looks like in the `makefile`.
+
+```make
+./build/main.o: ./src/main.c
+	gcc $(CFLAGS) ./src/main.c -o ./build/main.o
+```
+
 ## Debug
 
 To debug, run `make debug` to compiler the entire application with debugging information.
